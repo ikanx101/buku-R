@@ -2,8 +2,8 @@ project:
   type: book
 
 book:
-  title: "Intro To R Volume 4"
-  subtitle: "Modul Training"
+  title: "Intro To R - Volume 4"
+  subtitle: "Sebuah Modul Training"
   author: "Ikang Fadhli"
   date: "Maret 2024"
   chapters:

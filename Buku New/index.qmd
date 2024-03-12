@@ -14,3 +14,15 @@ Oleh karena itu, saya mencoba meng-_update_ modul _training_ ini agar tetap rele
 Ikang Fadhli.
 
 ikanx101.com
+
+# Untuk apa saya belajar __R__? {.unnumbered}
+
+Di era digitalisasi ini, disadari atau tidak data tersebar di mana-mana. Data juga dihasilkan dengan _volume_ yang besar dalam waktu singkat. 
+
+> _Analoginya seperti ada sungai yang memiliki arus yang deras dan kencang._
+Seperti itulah kondisi saat ini.
+
+_Tools_ analisa data klasik seperti __Ms. Excel__ dan __SPSS__ sudah tidak mampu lagi melakukan analisa _big data_ yang seringkali berbentuk _unstructured data_.
+
+__R__ tidak sendirian, ada juga _software_ lain bernama __Python__. Keduanya digunakan untuk membuat algoritma _artificial intelligence_ (bahasa keren dari _machine learning_. Bahasa kerennya dari _computational science_).
+

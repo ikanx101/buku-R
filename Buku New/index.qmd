@@ -1,9 +1,16 @@
-# Preface {.unnumbered}
+# Kata Pengantar {.unnumbered}
 
-This is a Quarto book.
+Sudah dua tahun sejak saya mempublikasikan modul _training_ __Intro to R - Volume 3__ di kalangan internal Nutrifood dan ITB. Ada berbagai tanggapan yang saya terima dan semuanya memiliki sentimen positif.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+Sejak saat itu banyak perubahan dan perkembangan dalam dunia data sains, termasuk pada __R__, misalnya:
 
-```{r}
-1 + 1
-```
+1. Berubahnya haluan __R Studio__ menjadi __Posit__. Akibatnya __Posit__ kini tak hanya bisa digunakan oleh _useR_ tapi juga oleh pawang ular.
+1. Munculnya __Quarto__ sebagai calon penerus __R Markdown__ dan _libraries_ sejenisnya.
+1. Penerapan _generative AI_ yang semakin meluas, termasuk penggunaan __Hugging Face__ sebagai _marketplace_ untuk model-model AI.
+1. Penggunaan _meta heuristic optimization algorithm_ untuk model _reinforce learning_.
+
+Oleh karena itu, saya mencoba meng-_update_ modul _training_ ini agar tetap relevan.
+
+Ikang Fadhli.
+
+ikanx101.com

@@ -88,7 +88,7 @@ Bagi Kamu yang kaget dan tidak terbiasa melihat tampilan yang _intimidating_ sep
 2. _R Studio Cloud_, tersedia layanan _cloud_ sehingga bisa diakses dan digunakan menggunakan _browser_ di _gadget_ manapun. Layanan _cloud_ ini bisa diakses [di sini](https://rstudio.cloud) dan dikoneksikan ke akun __github__ Kamu. Kira-kira seperti ini tampilannya jika dibuka di _Chrome for Android_:
 
 ```{r out.width = '40%',echo=FALSE,fig.align='center'}
-knitr::include_graphics('Skrinsut 1.jpg')
+knitr::include_graphics('IMG_0439.jpeg')
 ```
 
 3. _Shiny Apps_, kita bisa membuat _apps_ berbasis _web_ dari __R__. _Apps_ ini bisa dijadikan _dashboard_ atau mesin kalkulasi otomatis. Tergantung seberapa jauh Kamu membuat _coding_ algoritmanya.

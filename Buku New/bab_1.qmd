@@ -82,6 +82,23 @@ Bagi Kamu yang kaget dan tidak terbiasa melihat tampilan yang _intimidating_ sep
 
 > Tapi tolong diperhatikan bahwa __R Studio__ hanya tambahan tampilan dari __R__ standar. Jadi Kamu tetap harus meng- _install_ __R__ yah!
 
+### Kelebihan R Studio antara lain: {.unnumbered}
+
+1. _Free_, kita bisa memilih versi gratis dari __R Studio__ tanpa ada pengurangan fitur dasar dari __R__.
+2. _R Studio Cloud_, tersedia layanan _cloud_ sehingga bisa diakses dan digunakan menggunakan _browser_ di _gadget_ manapun. Layanan _cloud_ ini bisa diakses [di sini](https://rstudio.cloud) dan dikoneksikan ke akun __github__ Kamu. Kira-kira seperti ini tampilannya jika dibuka di _Chrome for Android_:
+
+```{r out.width = '40%',echo=FALSE,fig.align='center'}
+knitr::include_graphics('Skrinsut 1.jpg')
+```
+
+3. _Shiny Apps_, kita bisa membuat _apps_ berbasis _web_ dari __R__. _Apps_ ini bisa dijadikan _dashboard_ atau mesin kalkulasi otomatis. Tergantung seberapa jauh Kamu membuat _coding_ algoritmanya.
+4. _R Markdown_, ini fitur yang paling saya sukai. Bahkan untuk menulis _web_ ini, saya menggunakan _R Markdown_. Output files -nya beragam, mulai dari `docx`, `pptx`, `pdf`, `html`, `md`, dll. Bahkan kita bisa membuat [_e-book_](https://bookdown.org/) dengan memanfaatkan `library(bookdown)`.
+
+Jadi, setelah membaca bagian ini pastikan Kamu sudah meng- _install_ __R__ dan __R Studio__ yah. 
+
+> Jangan sampai terbalik urutan instalasinya!
+
+
 ### Cara Lain Menggunakan R Studio
 
 Ada satu alternatif cara bagi kita untuk menggunakan R Studio tanpa harus melakukan instalasi __R__ dan R Studio, yakni dengan menggunakan __Docker Container__. Sebagai contoh, sejak Januari 2024, saya menggunakan laptop yang tak ter-_install_ __R__ dan R Studio. Saya bisa mengakses R Studio dengan cara _install_ __Docker__ dan memanggil _container_ berisi R Studio.

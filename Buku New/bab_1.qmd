@@ -92,12 +92,9 @@ knitr::include_graphics('IMG_0439.jpeg')
 ```
 
 3. _Shiny Apps_, kita bisa membuat _apps_ berbasis _web_ dari __R__. _Apps_ ini bisa dijadikan _dashboard_ atau mesin kalkulasi otomatis. Tergantung seberapa jauh Kamu membuat _coding_ algoritmanya.
-4. _R Markdown_, ini fitur yang paling saya sukai. Bahkan untuk menulis _web_ ini, saya menggunakan _R Markdown_. Output files -nya beragam, mulai dari `docx`, `pptx`, `pdf`, `html`, `md`, dll. Bahkan kita bisa membuat [_e-book_](https://bookdown.org/) dengan memanfaatkan `library(bookdown)`.
+4. _Quarto_, ini fitur terbaru yang paling saya sukai. Bahkan untuk menulis _buku_ ini, saya menggunakan _Quarto_. _Output files_ -nya beragam, mulai dari `docx`, `pptx`, `pdf`, `html`, `md`, dll. 
 
-Jadi, setelah membaca bagian ini pastikan Kamu sudah meng- _install_ __R__ dan __R Studio__ yah. 
-
-> Jangan sampai terbalik urutan instalasinya!
-
+Jadi, setelah membaca bagian ini pastikan Kamu sudah meng- _install_ __R__ dan __R Studio__ yah. Jangan sampai terbalik urutan instalasinya!
 
 ### Cara Lain Menggunakan R Studio
 
@@ -115,6 +112,43 @@ docker run --rm -p 8888:8787 -d \
            -e GROUPID=1001 \
            -v ~:/home/ikanx101 ikanx101/r-custom:latest 
 ```
+
+## Mengenal operator dasar
+
+Beberapa operator dasar di __R__ antara lain:
+
+1. `=` atau `<-`, digunakan untuk melakukan pendefinisian suatu objek. Contoh:
+
+```{r}
+a = 10
+b <- 3
+a + b
+```
+
+2. `' '` atau `" "`, digunakan untuk menandai tipe variabel berupa `character`. Lalu apa beda penggunaan `' '` dengan `" "`? `" "` digunakan saat `'` dibutuhkan dalam suatu `character`. Contoh:
+
+```{r}
+a = 'saya hendak pergi ke pasar'
+b = "i don't want to buy it"
+a
+b
+```
+
+3. `==`, `<`, `>`, `<=`, atau `>=`, digunakan untuk mengecek apakah dua variabel itu memiliki kesamaan atau tidak. _Output_ dari operator ini adalah `logic` (_TRUE or FALSE_). Contoh:
+
+```{r}
+a = 5
+b = 3
+a == b
+a > b
+```
+
+4. `;` atau _<enter>_, digunakan untuk memisahkan baris kode pada skrip algoritma. Contoh:
+
+```{r}
+a = 5;b = 3;a*b
+```
+
 
 
 

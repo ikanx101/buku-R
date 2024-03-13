@@ -15,6 +15,10 @@ Ikang Fadhli.
 
 ikanx101.com
 
+# Cara Membaca dan Menggunakan Buku Ini
+
+Pada buku ini, disertakan penjelasan dan skrip __R__ yang bisa dicoba langsung. Setiap skrip yang _executable_ memiliki _shading_ berwarna abu-abu di setiap barisnya.
+
 # Untuk apa saya belajar __R__? {.unnumbered}
 
 Di era digitalisasi ini, disadari atau tidak data tersebar di mana-mana. Data juga dihasilkan dengan _volume_ yang besar dalam waktu singkat. 

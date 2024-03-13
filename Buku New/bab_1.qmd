@@ -168,7 +168,7 @@ Secara _default_, __R__ menggunakan `C:\\My Documents` sebagai _working director
 _Working directory_ bisa diubah sesuai kemauan kita memanfaatkan perintah `setwd()`, tanda dalam kurung diisi dengan _folder path_ yang diinginkan.
 
 ```{r}
-setwd("\buku R\buku new")
+setwd("~/buku-R/Buku New")
 ```
 
 ### Apa keuntungan mengubah-ubah _working directory_?
@@ -222,6 +222,72 @@ Untuk beberapa `library` ada kemungkinan (kecil) ditemukan kasus saat mereka tid
 
 Misalnya pada saat kita memanggil `library(tidyverse)` dan `library(plyr)`, maka perintah `filter()` yang dimiliki `tidyverse` akan tidak berjalan dengan baik. 
 
+Ada beberapa solusi yang bisa kita lakukan:
+
+1. Selalu mengaktifkan `library` sesuai dengan urutannya. Biasanya setiap kali kita mengaktifkan `library` akan muncul _warnings_ mengenai kompatibilitas `library` tersebut dengan `library` lain.
+2. Menonaktikan `library` yang sudah tidak perlu digunakan dengan perintah:
+
+`detach("package:tidytext", unload = TRUE)`
+
+3. Memanggil `library` tanpa harus mengaktifkannya. Kita bisa melakukannya dengan menggunakan tanda `nama packages::`. Contoh:
+
+`reshape2::melt(data)`
+
+### _Help_
+
+Setiap `library` yang telah di-_install_ dan aktif disertai dengan fitur _help_ yang berfungsi sebagai informasi kepada _user_. Jika kita ingin mengetahui bagaimana isi dari perintah suatu fungsi, kita bisa gunakan perintah `help(nama fungsi)` atau `?nama fungsi`. _Help_ akan muncul pada tab _help_ di __R Studio__. Contoh:
+
+```{r}
+help(sum)
+```
+
+atau
+
+```{r}
+?sum
+```
+
+### _Example_
+
+Selain _help_, kita bisa melihat contoh pemakaian dari suatu fungsi di __R__ dengan menggunakan perintah `example()`. Contoh:
+
+```{r}
+example(sum)
+```
+
+# Mulai Bekerja dengan __R__
+
+## Mengenal Data
+
+Sebelum memulai bekerja dengan __R__, ada baiknya saya jelaskan dan ingatkan kembali beberapa hal penting terkait data. Dengan demikian, kita bisa memilih jenis analisa statistika apa yang tepat untuk tipe-tipe data yang berbeda.
+
+### Tipe Data (statistika)
+
+Secara statistika, berikut adalah pembagian data berdasarkan tipenya:
+
+```{r out.width = '60%',echo=FALSE,fig.align='center'}
+knitr::include_graphics('tipe data.png')
+```
+
+1. Data kualitatif: adalah data yang tidak bisa dilakukan operasi aritmatika (penjumlahan, pengurangan, pembagian, dan perkalian). Data seperti ini, kita akan sebut sebagai __data kategorik__. 
+  * __Nominal__; Representasi dari sesuatu. Contoh: `gender`, `1` saya tulis sebagai `pria` dan `2` saya tulis sebagai `wanita`. 
+  * __Ordinal__; Urutan dari data menjadi penting. Contoh: skala _likert_ 1 - 6.
+2. Data kuantitatif: adalah data yang bisa dilakukan operasi aritmatika (penjumlahan, pengurangan, pembagian, dan perkalian). Data seperti ini, kita akan sebut sebagai __data numerik__. 
+  * __Diskrit__; bilangan bulat (_integer_). 
+  * __Kontinu__; bilangan _real_ (mengandung koma).
+
+### Tipe Data di __R__
+
+Di __R__ ada beberapa tipe data yang sering digunakan. Secara hierarki, bisa diurutkan sebagai berikut:
+
+`character > numeric > integer > logical`
+
+Oke, saya coba jelaskan satu persatu yah:
+
+1. `character`: merupakan tipe data berupa karakter atau `string`. Semua data bisa dilihat sebagai `character`. Oleh karena itu, secara hierarki tipe data ini ditempatkan di urutan paling atas. Namun, data tipe ini tidak bisa dilakukan operasi aritmatika _yah_.
+2. `numeric`: merupakan tipe data angka berupa bilangan _real_. Kalau saya boleh bilang, tipe data ini mirip dengan data numerik di poin __2.1.1__.
+3. `integer`: merupakan tipe data angka berupa bilangan bulat. Sekilas mirip dengan tipe data diskrit di poin __2.1.1__. Namun di beberapa kondisi, tipe data ini bisa dijadikan data __kategorik__ sehingga kita bisa sebut tipenya menjadi `factor`.
+4. `logical`: merupakan tipe data _boolean_. Hanya berisi `TRUE` atau `FALSE`. Tipe data ini sangat berguna saat kita melakukan _if conditional_, _looping_, atau membuat _regex_ (_reguler expression_).
 
 
 

@@ -15,7 +15,7 @@ Ikang Fadhli.
 
 ikanx101.com
 
-# Cara Membaca dan Menggunakan Buku Ini
+# Cara Membaca dan Menggunakan Buku Ini {.unnumbered}
 
 Pada buku ini, disertakan penjelasan dan skrip __R__ yang bisa dicoba langsung. Setiap skrip yang _executable_ memiliki _shading_ berwarna abu-abu di setiap barisnya.
 

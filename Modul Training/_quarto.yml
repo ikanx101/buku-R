@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "Intro To R - Volume 4"
+  subtitle: "Sebuah Modul Training"
+  author: "Ikang Fadhli"
+  date: "14/03/2024"
+  chapters:
+    - index.qmd
+    - 1 how to.qmd
+    - 2 why.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt

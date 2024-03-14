@@ -10,7 +10,8 @@ book:
     - index.qmd
     - 1 how to.qmd
     - 2 why.qmd
-    - intro.qmd
+    - 3 part 1.qmd
+    - 3 part 2.qmd
     - summary.qmd
     - references.qmd
 

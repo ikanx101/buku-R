@@ -8,6 +8,15 @@ Sebelum memulai bekerja dengan __R__, ada baiknya saya jelaskan dan ingatkan kem
 
 Secara statistika, berikut adalah pembagian data berdasarkan tipenya:
 
+```{mermaid}
+flowchart LR
+  A[Data] --> B(Kualitatif)
+  A --> C(Kuantitatif)
+  B --> D[Nominal]
+  B --> E[Ordinal]
+  C --> F[Diskrit]
+  C --> G[Kontinu]
+```
 
 1. Data kualitatif: adalah data yang tidak bisa dilakukan operasi aritmatika (penjumlahan, pengurangan, pembagian, dan perkalian). Data seperti ini, kita akan sebut sebagai __data kategorik__. 
     - __Nominal__; Representasi dari sesuatu. Contoh: `gender`, `1` saya tulis sebagai `pria` dan `2` saya tulis sebagai `wanita`. 

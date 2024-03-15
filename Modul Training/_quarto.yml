@@ -6,6 +6,8 @@ book:
   subtitle: "Sebuah Modul Training"
   author: "Ikang Fadhli"
   date: "14/03/2024"
+  downloads: [pdf]
+  sharing: [twitter, facebook]
   chapters:
     - index.qmd
     - 1 how to.qmd
@@ -15,10 +17,15 @@ book:
     - summary.qmd
     - references.qmd
 
+comments:
+  hypothesis: true
+  
 bibliography: references.bib
+
+highlight-style: pygments
 
 format:
   html:
-    theme: cosmo
-  pdf:
-    documentclass: scrreprt
+    theme: superhero
+    code-copy: true
+    cover-image: cover.png

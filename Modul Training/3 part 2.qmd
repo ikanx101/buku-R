@@ -10,11 +10,11 @@ Secara statistika, berikut adalah pembagian data berdasarkan tipenya:
 
 
 1. Data kualitatif: adalah data yang tidak bisa dilakukan operasi aritmatika (penjumlahan, pengurangan, pembagian, dan perkalian). Data seperti ini, kita akan sebut sebagai __data kategorik__. 
-  * __Nominal__; Representasi dari sesuatu. Contoh: `gender`, `1` saya tulis sebagai `pria` dan `2` saya tulis sebagai `wanita`. 
-  * __Ordinal__; Urutan dari data menjadi penting. Contoh: skala _likert_ 1 - 6.
+    - __Nominal__; Representasi dari sesuatu. Contoh: `gender`, `1` saya tulis sebagai `pria` dan `2` saya tulis sebagai `wanita`. 
+    - __Ordinal__; Urutan dari data menjadi penting. Contoh: skala _likert_ `1 - 6`.
 2. Data kuantitatif: adalah data yang bisa dilakukan operasi aritmatika (penjumlahan, pengurangan, pembagian, dan perkalian). Data seperti ini, kita akan sebut sebagai __data numerik__. 
-  * __Diskrit__; bilangan bulat (_integer_). 
-  * __Kontinu__; bilangan _real_ (mengandung koma).
+    - __Diskrit__; bilangan bulat (_integer_). 
+    - __Kontinu__; bilangan _real_ (mengandung koma).
 
 ### Tipe Data di __R__
 

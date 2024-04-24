@@ -38,9 +38,36 @@ Oke, saya coba jelaskan satu persatu yah:
 3. `integer`: merupakan tipe data angka berupa bilangan bulat. Sekilas mirip dengan tipe data diskrit di poin __2.1.1__. Namun di beberapa kondisi, tipe data ini bisa dijadikan data __kategorik__ sehingga kita bisa sebut tipenya menjadi `factor`.
 4. `logical`: merupakan tipe data _boolean_. Hanya berisi `TRUE` atau `FALSE`. Tipe data ini sangat berguna saat kita melakukan _if conditional_, _looping_, atau membuat _regex_ (_reguler expression_).
 
+### Struktur Data di __R__
 
+Ada beberapa bentuk struktur data di __R__, yakni: 
 
+1. _Single value_; satu objek yang berisi satu _value_ saja.
+2. _Vector_; kumpulan dari beberapa _single value(s)_ yang menjadi satu objek. Bayangkan sebagai satu buah kolom di _file Ms. Excel_.
+3. _Data frame_ atau _tibble_; merupakan kumpulan dari beberapa _vectors_ yang memiliki ukuran sama. Bayangkan sebagai satu tabel di _Ms. Excel_ yang banyaknya baris di setiap kolom sama.
+4. _List_; merupakan bentuk struktur data yang sangat kompleks. Berisi _multiple data_ dengan struktur bermacam-macam.
 
+### Apa gunanya kita mengetahui jenis dan struktur data di __R__?
 
+Beberapa algoritma yang tersedia di _library_ mengharuskan kita memiliki _input_ yang ter-standar, baik dari segi jenis dan strukturnya.
 
+Dengan mengetahui jenis dan struktur data, kita bisa lebih mudah bekerja dengan algoritma yang ada di _library_.
+
+Contoh:
+
+> Algoritma analisa _simple linear regression_ (`lm()`) memerlukan input berupa `data.frame()` dengan masing-masing _variables_ yang ada di dalamnya berjenis _numeric_.
+
+## Tata Cara Memberikan Nama _Object_ atau Variabel
+
+Setiap _object_ atau variabel di __R__ bisa diberikan nama sesuai dengan keinginan kita. Tidak ada aturan baku dalam memberikan nama. 
+
+> Tapi, dengan memberikan nama yang __tepat__ kita bisa bekerja dengan ebih cepat dan efisien.
+Berikut adalah tata cara pemberian nama yang akan membuat pekerjaan kita lebih efisien:
+
+1. Seragamkan kapital atau non kapital dari nama variabel kita. Jika menggunakan _lowercase_, maka harus konsisten di setiap data yang ada di _environment_ __R__. 
+2. Hindari penggunaan spasi " ". Jika memang tidak bisa dihindari, gunakan tanda "." atau "_". 
+
+Contoh: variabel `tinggi badan` akan lebih baik ditulis dalam bentuk `tinggi.badan` atau `tinggi_badan`.
+
+Jika sudah terlanjur memiliki nama variabel yang tidak seragam atau mengandung spasi (biasanya terjadi saat kita meng- _import_ data dari sumber lain seperti: _excel_), kita bisa merapikannya dengan otomatis dengan memanfaatkan `library(janitor)` fungsi `make_clean_names()` atau `clean_names()`.
 

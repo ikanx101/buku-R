@@ -1,0 +1,6 @@
+- source: project
+  quarto-pub:
+    - id: deb7efc5-d125-4aa7-b2f3-b48b6c5132d7
+      url: 'https://ikanx101.quarto.pub/intro-to-r---volume-4'
+    - id: 96775dee-2e05-4716-9f90-9adddfc41d02
+      url: 'https://ikanx101.quarto.pub/intro-to-r---volume-4'

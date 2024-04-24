@@ -1,0 +1,53 @@
+# Membuat _function_ di __R__.
+
+__R__ memungkinkan kita untuk membuat fungsi yang _custom_ secara mandiri. Jika kita sering menggunakan perintah-perintah tertentu dan ingin menghemat penulisan algoritma, kita bisa membuat _custom_ `function()` sendiri.
+
+```{r out.width = '80%',echo=FALSE}
+knitr::include_graphics('function.png')
+```
+
+`function()` bisa memerlukan _entry variable_ atau tidak memerlukan _entry variable_ sama sekali.
+
+## `function()` tanpa _entry variable_
+
+Ada kalanya kita membuat `function()` tanpa ada _entry variable_. _Lho kok gitu?_
+
+> Tergantung dari kebutuhan kita _yah_.
+
+Sebagai contoh, kita akan membuat `function()` yang akan men- _generate_ nama orang, umur, tinggi, dan berat badan:
+
+```{r}
+demografi = function(){
+  nama = randomNames::randomNames(1)
+  umur = sample(c(20:60),1)
+  tinggi = rnorm(1,mean = 150, sd = 20)
+  tinggi = round(tinggi,1)
+  berat = rnorm(1,mean = 40, sd = 5)
+  berat = round(berat,1)
+  data = c(nama,umur,tinggi,berat)
+  return(data)
+}
+demografi()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

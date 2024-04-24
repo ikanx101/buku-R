@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Intro To R - Volume 4 – Cara Membaca dan Menggunakan Modul Ini</title>
+<title>Intro To R - Volume 4 – 4&nbsp; Membuat function di R.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./2 why.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./summary.html" rel="next">
+<link href="./3 part 3.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -87,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1 how to.html">Cara Membaca dan Menggunakan Modul Ini</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3 part 4.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Membuat <em>function</em> di <strong>R</strong>.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -140,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1 how to.html" class="sidebar-item-text sidebar-link active">
+  <a href="./1 how to.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cara Membaca dan Menggunakan Modul Ini</span></a>
   </div>
 </li>
@@ -170,7 +204,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3 part 4.html" class="sidebar-item-text sidebar-link">
+  <a href="./3 part 4.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Membuat <em>function</em> di <strong>R</strong>.</span></span></a>
   </div>
 </li>
@@ -191,15 +225,27 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#function-tanpa-entry-variable" id="toc-function-tanpa-entry-variable" class="nav-link active" data-scroll-target="#function-tanpa-entry-variable"><span class="header-section-number">4.1</span> <code>function()</code> tanpa <em>entry variable</em></a></li>
+  <li><a href="#function-dengan-entry-variable" id="toc-function-dengan-entry-variable" class="nav-link" data-scroll-target="#function-dengan-entry-variable"><span class="header-section-number">4.2</span> <code>function()</code> dengan <em>entry variable</em></a></li>
+  <li><a href="#kelebihan-menggunakan-function" id="toc-kelebihan-menggunakan-function" class="nav-link" data-scroll-target="#kelebihan-menggunakan-function"><span class="header-section-number">4.3</span> Kelebihan Menggunakan <em>function</em></a></li>
+  <li><a href="#membaca-data-dari-excel" id="toc-membaca-data-dari-excel" class="nav-link" data-scroll-target="#membaca-data-dari-excel"><span class="header-section-number">5</span> Membaca Data dari <strong>Excel</strong></a>
+  <ul class="collapse">
+  <li><a href="#membaca-data-dari-format-file-lain" id="toc-membaca-data-dari-format-file-lain" class="nav-link" data-scroll-target="#membaca-data-dari-format-file-lain"><span class="header-section-number">5.1</span> Membaca Data dari Format File Lain</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cara Membaca dan Menggunakan Modul Ini</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Membuat <em>function</em> di <strong>R</strong>.</span></h1>
 </div>
 
 
@@ -216,9 +262,109 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Pada buku ini, disertakan penjelasan dan skrip <strong>R</strong> yang bisa dicoba langsung (<em>executable</em>).</p>
+<p><strong>R</strong> memungkinkan kita untuk membuat fungsi yang <em>custom</em> secara mandiri. Jika kita sering menggunakan perintah-perintah tertentu dan ingin menghemat penulisan algoritma, kita bisa membuat <em>custom</em> <code>function()</code> sendiri.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="function.png" class="img-fluid figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><code>function()</code> bisa memerlukan <em>entry variable</em> atau tidak memerlukan <em>entry variable</em> sama sekali.</p>
+<section id="function-tanpa-entry-variable" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="function-tanpa-entry-variable"><span class="header-section-number">4.1</span> <code>function()</code> tanpa <em>entry variable</em></h2>
+<p>Ada kalanya kita membuat <code>function()</code> tanpa ada <em>entry variable</em>. <em>Lho kok gitu?</em></p>
+<blockquote class="blockquote">
+<p>Tergantung dari kebutuhan kita <em>yah</em>.</p>
+</blockquote>
+<p>Sebagai contoh, kita akan membuat <code>function()</code> yang akan men- <em>generate</em> nama orang, umur, tinggi, dan berat badan:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>demografi <span class="ot">=</span> <span class="cf">function</span>(){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  nama <span class="ot">=</span> randomNames<span class="sc">::</span><span class="fu">randomNames</span>(<span class="dv">1</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  umur <span class="ot">=</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">20</span><span class="sc">:</span><span class="dv">60</span>),<span class="dv">1</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  tinggi <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>,<span class="at">mean =</span> <span class="dv">150</span>, <span class="at">sd =</span> <span class="dv">20</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  tinggi <span class="ot">=</span> <span class="fu">round</span>(tinggi,<span class="dv">1</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  berat <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">1</span>,<span class="at">mean =</span> <span class="dv">40</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  berat <span class="ot">=</span> <span class="fu">round</span>(berat,<span class="dv">1</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">=</span> <span class="fu">c</span>(nama,umur,tinggi,berat)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">demografi</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Salas, Mercedes" "28"              "175.6"           "39.8"           </code></pre>
+</div>
+</div>
+</section>
+<section id="function-dengan-entry-variable" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="function-dengan-entry-variable"><span class="header-section-number">4.2</span> <code>function()</code> dengan <em>entry variable</em></h2>
+<p><em>Entry variable</em> yang digunakan bisa berbentuk macam-macam dan bisa lebih dari satu.</p>
+<p>Contoh, kita akan membuat <code>function()</code> untuk mencari modus dari sebuah <em>vector</em>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>modus <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  ux <span class="ot">=</span> <span class="fu">unique</span>(x)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  tab <span class="ot">=</span> <span class="fu">tabulate</span>(<span class="fu">match</span>(x, ux))</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  ux[tab <span class="sc">==</span> <span class="fu">max</span>(tab)]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Mari kita cek apakah <code>function</code>-nya berhasil atau tidak:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nama <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'a'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">modus</span>(nama)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a"</code></pre>
+</div>
+</div>
+<p>Contoh berikutnya kita akan buat <code>function()</code> untuk menghitung rumus pitagoras dengan dua <em>entry variables</em>, yakni <code>a</code> dan <code>b</code> sebagai berikut:</p>
+<p>Ini adalah rumusnya:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pytagoras <span class="ot">=</span> <span class="cf">function</span>(a,b){</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>((a<span class="sc">^</span><span class="dv">2</span>) <span class="sc">+</span> (b<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Mari kita hitung pitagoras dengan <code>a = 3</code> dan <code>b = 4</code>, yakni:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pytagoras</span>(<span class="dv">3</span>,<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5</code></pre>
+</div>
+</div>
+</section>
+<section id="kelebihan-menggunakan-function" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="kelebihan-menggunakan-function"><span class="header-section-number">4.3</span> Kelebihan Menggunakan <em>function</em></h2>
+<p>Salah satu kelebihan penggunaan <em>function</em> adalah kita bisa mengaplikasikannya ke dalam <em>parallel computing</em> dengan <code>library(parallel)</code>. Namun <em>parallel computing</em> menggunakan <strong>R</strong> hanya bisa dilakukan dengan sistem operasi komputer <strong>Linux</strong>.</p>
+</section>
+<section id="membaca-data-dari-excel" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Membaca Data dari <strong>Excel</strong></h1>
+<p>Data yang kita temui sehari-hari biasanya memiliki format <code>.xlsx</code> atau <code>.xls</code>. Sekarang kita akan <em>import</em> data dari <strong>Excel</strong> untuk masuk ke dalam <strong>R</strong>.</p>
+<p><em>Library</em> yang digunakan adalah <code>library(readxl)</code></p>
+<p>Contoh <a href="https://github.com/ikanx101/belajaR/blob/master/Materi%20Training/Day%201%20-%20R%20Series/Contoh_Data.xlsx">data yang digunakan</a>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">=</span> <span class="fu">read_excel</span>(<span class="st">'Contoh_Data.xlsx'</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  dept  nama.karyawan status bulan tardines.frequency permit.frequency
+  &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;  &lt;chr&gt;              &lt;dbl&gt;            &lt;dbl&gt;
+1 JES   Jimenez       Tetap  Jan                    2                2
+2 JES   Mccarthy      Tetap  Mar                    0                0
+3 JES   Topaha        Tetap  Jan                    0                1
+4 JES   el-Ghanem     Tetap  Mar                    3                1
+5 JES   Topaha        Tetap  Mei                    0                1
+6 JES   Lofton        Tetap  Mei                    0                2
+# ℹ 2 more variables: sick.frequency &lt;dbl&gt;, leave.frequency &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<section id="membaca-data-dari-format-file-lain" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="membaca-data-dari-format-file-lain"><span class="header-section-number">5.1</span> Membaca Data dari Format File Lain</h2>
+<p><strong>R</strong> memiliki kemampuan untuk membaca data dalam format lain seperti <code>csv</code>, <code>sav</code> (SPSS), <code>txt</code>, dan lainnya. Secara <em>default</em>, <strong>R</strong> bisa membaca file dalam bentuk <code>csv</code> dan <code>txt</code> tanpa menggunakan <code>library()</code> lainnya.</p>
+<p>Gunakan fungsi <code>read.csv()</code> untuk membaca file <code>csv</code> dan <code>readLines()</code> untuk file <code>txt</code>.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -643,13 +789,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Kata Pengantar">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Kata Pengantar</span>
+      <a href="./3 part 3.html" class="pagination-link" aria-label="Memulai dengan __R__">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Memulai dengan <strong>R</strong></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./2 why.html" class="pagination-link" aria-label="Untuk apa saya belajar __R__?">
-        <span class="nav-page-text">Untuk apa saya belajar <strong>R</strong>?</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

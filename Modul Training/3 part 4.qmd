@@ -30,18 +30,67 @@ demografi = function(){
 demografi()
 ```
 
+## `function()` dengan _entry variable_
+
+_Entry variable_ yang digunakan bisa berbentuk macam-macam dan bisa lebih dari satu.
+
+Contoh, kita akan membuat `function()` untuk mencari modus dari sebuah _vector_:
+
+```{r}
+modus = function(x) {
+  ux = unique(x)
+  tab = tabulate(match(x, ux))
+  ux[tab == max(tab)]
+}
+```
+
+Mari kita cek apakah `function`-nya berhasil atau tidak:
+
+```{r}
+nama = c('a','b','a','c','d')
+modus(nama)
+```
+
+Contoh berikutnya kita akan buat `function()` untuk menghitung rumus pitagoras dengan dua _entry variables_, yakni `a` dan `b` sebagai berikut:
+
+Ini adalah rumusnya:
+
+```{r}
+pytagoras = function(a,b){
+  sqrt((a^2) + (b^2))
+}
+```
+
+Mari kita hitung pitagoras dengan `a = 3` dan `b = 4`, yakni:
+
+```{r}
+pytagoras(3,4)
+```
+
+## Kelebihan Menggunakan _function_
+
+Salah satu kelebihan penggunaan _function_ adalah kita bisa mengaplikasikannya ke dalam _parallel computing_ dengan `library(parallel)`. Namun _parallel computing_ menggunakan __R__ hanya bisa dilakukan dengan sistem operasi komputer __Linux__.
 
 
+# Membaca Data dari __Excel__
 
+Data yang kita temui sehari-hari biasanya memiliki format `.xlsx` atau `.xls`. Sekarang kita  akan _import_ data dari __Excel__ untuk masuk ke dalam __R__.
 
+_Library_ yang digunakan adalah `library(readxl)`
 
+Contoh [data yang digunakan](https://github.com/ikanx101/belajaR/blob/master/Materi%20Training/Day%201%20-%20R%20Series/Contoh_Data.xlsx):
 
+```{r}
+library(readxl)
+data = read_excel('Contoh_Data.xlsx')
+head(data)
+```
 
+## Membaca Data dari Format File Lain
 
+__R__ memiliki kemampuan untuk membaca data dalam format lain seperti `csv`, `sav` (SPSS), `txt`, dan lainnya. Secara _default_, __R__ bisa membaca file dalam bentuk `csv` dan `txt` tanpa menggunakan `library()` lainnya.
 
-
-
-
+Gunakan fungsi `read.csv()` untuk membaca file `csv` dan `readLines()` untuk file `txt`.
 
 
 

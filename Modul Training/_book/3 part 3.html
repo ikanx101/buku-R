@@ -210,8 +210,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./3 part 5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Membaca Data dari <strong>Excel</strong></span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -563,17 +569,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>nama_orang <span class="ot">=</span> randomNames<span class="sc">::</span><span class="fu">randomNames</span>(<span class="dv">20</span>)</span>
 <span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>nama_orang</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] "Reynolds, Lacy"        "el-Zadeh, Naseera"     "Peppers, Jamez"       
- [4] "Chafino, Aurora"       "Daily, Daniel"         "Waggoner, Xavier"     
- [7] "Berry, Michel"         "Nateras, Andrew"       "Brown, Lolita"        
-[10] "al-Parsa, Asmaa"       "Archambault, Kristine" "Hicks, Domonique"     
-[13] "al-Sadri, Faarooq"     "Pedroza, Bianca"       "al-Hussein, Nadeera"  
-[16] "Krien, Joshua"         "Eppard, Brendin"       "Yim, Sruthi"          
-[19] "Hernandez, Roberto"    "Fazio, Katrina"       </code></pre>
+<pre><code> [1] "Gunaydin, Amanda"    "Farley, Cassidy"     "al-Ameen, Nisma"    
+ [4] "Linzy, Jasmine"      "Madera, Anthony"     "al-Mansouri, Mufeed"
+ [7] "Edmunds, Cameron"    "Vera, Gerald"        "Crowe, Kevin"       
+[10] "Gerardo, Guillermo"  "Pham, Paxton"        "Karp, Cleevens"     
+[13] "al-Ghazi, Laila"     "English, Dylon"      "al-Salame, Farha"   
+[16] "Staffieri, Joshua"   "Liu, Jimmy"          "al-Ismail, Haamida" 
+[19] "Swimmer, Alicia"     "Krug-Byrd, Trayvon" </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(nama_orang,<span class="dv">3</span>,<span class="at">replace =</span> F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Yim, Sruthi"      "Waggoner, Xavier" "Brown, Lolita"   </code></pre>
+<pre><code>[1] "al-Mansouri, Mufeed" "Swimmer, Alicia"     "Farley, Cassidy"    </code></pre>
 </div>
 </div>
 <p><code>replace = F</code> digunakan saat kita tidak ingin ada pemilihan yang berulang. Sedangkan <code>replace = T</code> digunakan saat diperbolehkan hasil pemilihan berulang. Coba <em>run</em> sendiri <em>yah</em>.</p>
@@ -618,16 +624,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>absensi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   id      nama tinggi_badan
-1   1 Alexander          153
-2   2      Rida          181
-3   3    Connor          160
-4   4    Austin          192
-5   5      Cody          157
-6   6    Dallas          198
-7   7     Kyree          183
-8   8  Zackarie          189
-9   9    Joshua          179
-10 10      Deon          172</code></pre>
+1   1   Brendan          157
+2   2     Aaish          158
+3   3       Max          172
+4   4    Steven          191
+5   5      Ibsa          180
+6   6 Nathanial          150
+7   7     Alton          170
+8   8  Nicholas          152
+9   9    Skyler          175
+10 10   Markice          195</code></pre>
 </div>
 </div>
 <p>Bentuk <em>data frame</em> kelak akan menjadi primadona dalam setiap analisa yang digunakan di <strong>R</strong>. Nanti saat kita belajar <em>data carpentry</em> menggunakan <code>tidyverse</code>, struktur <em>data frame</em> mudah dimanipulasi dengan <em>piping operator</em>: <code>%&gt;%</code>.</p>
@@ -747,8 +753,8 @@ FALSE  TRUE
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   10 obs. of  3 variables:
  $ id          : int  1 2 3 4 5 6 7 8 9 10
- $ nama        : chr  "Alexander" "Rida" "Connor" "Austin" ...
- $ tinggi_badan: int  153 181 160 192 157 198 183 189 179 172</code></pre>
+ $ nama        : chr  "Brendan" "Aaish" "Max" "Steven" ...
+ $ tinggi_badan: int  157 158 172 191 180 150 170 152 175 195</code></pre>
 </div>
 </div>
 <p>Terlihat bahwa data <code>absensi</code> memiliki struktur <strong>data.frame</strong> dengan ada <code>3</code> <em>variables</em> dan <code>10</code> <em>observations</em> (baris data).</p>
@@ -760,7 +766,7 @@ FALSE  TRUE
 <div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(absensi<span class="sc">$</span>tinggi_badan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  153.0   163.0   180.0   176.4   187.5   198.0 </code></pre>
+  150.0   157.2   171.0   170.0   178.8   195.0 </code></pre>
 </div>
 </div>
 </section>
@@ -848,7 +854,7 @@ FALSE  TRUE
 <div class="cell">
 <div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 34</code></pre>
+<pre><code>[1] 32</code></pre>
 </div>
 </div>
 </section>

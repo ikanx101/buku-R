@@ -1,34 +1,21 @@
 project:
-  type: book
+  type: website
 
-book:
-  title: "Intro To R - Volume 4"
-  subtitle: "Sebuah Modul Training"
-  author: "Ikang Fadhli"
-  date: "14/03/2024"
-  downloads: [pdf]
-  sharing: [twitter, facebook]
-  chapters:
-    - index.qmd
-    - 1 how to.qmd
-    - 2 why.qmd
-    - 3 part 1.qmd
-    - 3 part 2.qmd
-    - 3 part 3.qmd
-    - 3 part 4.qmd
-    - 3 part 5.qmd
-    - summary.qmd
-    - references.qmd
-
-comments:
-  hypothesis: true
-  
-bibliography: references.bib
-
-highlight-style: pygments
+website:
+  title: "coba"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
 
 format:
   html:
-    theme: united
-    code-copy: true
-    cover-image: cover.png
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+editor: visual
+

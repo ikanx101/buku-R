@@ -1,3 +1,0 @@
-# Cara Membaca dan Menggunakan Modul Ini {.unnumbered}
-
-Pada buku ini, disertakan penjelasan dan skrip __R__ yang bisa dicoba langsung (_executable_).
